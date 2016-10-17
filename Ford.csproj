@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E7841FF-3AA3-4DF7-BAF0-4E26EF2495F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ford</RootNamespace>
+    <AssemblyName>Ford</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\jquery-2.2.3.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\jquery-2.2.3.min.js" />
+    <Content Include="bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Edge.aspx" />
+    <Content Include="Escape.aspx" />
+    <Content Include="Expedition.aspx" />
+    <Content Include="Explorer.aspx" />
+    <Content Include="F150.aspx" />
+    <Content Include="Flex.aspx" />
+    <Content Include="Owner.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="Default.Master" />
+    <Content Include="Mustang.aspx" />
+    <Content Include="Fusion.aspx" />
+    <Content Include="Fiesta.aspx" />
+    <Content Include="Focus.aspx" />
+    <Content Include="CMax.aspx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pictures\Cars\cmax_dropdown.png" />
+    <Content Include="Pictures\Cars\fiesta_dropdown.jpg" />
+    <Content Include="Pictures\Cars\focus_dropdown.png" />
+    <Content Include="Pictures\Cars\fusion_dropdown.jpg" />
+    <Content Include="Pictures\Cars\mustang_dropdown.png" />
+    <Content Include="Pictures\Cars\taurus_dropdown.png" />
+    <Content Include="Pictures\CMax\CMAX1.jpg" />
+    <Content Include="Pictures\CMax\CMAX2.jpg" />
+    <Content Include="Pictures\CMax\CMAX3.jpg" />
+    <Content Include="Pictures\CMax\CMAX4.jpg" />
+    <Content Include="Pictures\CMax\CMAX5.jpg" />
+    <Content Include="Pictures\CMax\CMAX_IS.png" />
+    <Content Include="Pictures\CMax\CMAX_KB.png" />
+    <Content Include="Pictures\CMax\CMAX_MG.png" />
+    <Content Include="Pictures\CMax\CMAX_OW.png" />
+    <Content Include="Pictures\CMax\CMAX_RR.png" />
+    <Content Include="Pictures\CMax\CMAX_SB.png" />
+    <Content Include="Pictures\CMax\CMAX_TE.png" />
+    <Content Include="Pictures\CMax\CMAX_WP.png" />
+    <Content Include="Pictures\CMax\Color_IS.PNG" />
+    <Content Include="Pictures\CMax\Color_KB.PNG" />
+    <Content Include="Pictures\CMax\Color_MG.PNG" />
+    <Content Include="Pictures\CMax\Color_OW.PNG" />
+    <Content Include="Pictures\CMax\Color_RR.PNG" />
+    <Content Include="Pictures\CMax\Color_SB.PNG" />
+    <Content Include="Pictures\CMax\Color_TE.PNG" />
+    <Content Include="Pictures\CMax\Color_WP.PNG" />
+    <Content Include="Pictures\Edge\Color_BF.PNG" />
+    <Content Include="Pictures\Edge\Color_GB.PNG" />
+    <Content Include="Pictures\Edge\Color_IS.PNG" />
+    <Content Include="Pictures\Edge\Color_KB.PNG" />
+    <Content Include="Pictures\Edge\Color_MG.PNG" />
+    <Content Include="Pictures\Edge\Color_OW.PNG" />
+    <Content Include="Pictures\Edge\Color_SB.PNG" />
+    <Content Include="Pictures\Edge\Color_WG.PNG" />
+    <Content Include="Pictures\Edge\Color_WP.PNG" />
+    <Content Include="Pictures\Edge\Edge1.jpg" />
+    <Content Include="Pictures\Edge\Edge2.jpg" />
+    <Content Include="Pictures\Edge\Edge_GB.png" />
+    <Content Include="Pictures\Edge\Edge_IS.png" />
+    <Content Include="Pictures\Edge\Edge_KB.png" />
+    <Content Include="Pictures\Edge\Edge_MG.png" />
+    <Content Include="Pictures\Edge\Edge_OW.png" />
+    <Content Include="Pictures\Edge\Edge_SB.png" />
+    <Content Include="Pictures\Escape\Color_CR.PNG" />
+    <Content Include="Pictures\Escape\Color_IS.PNG" />
+    <Content Include="Pictures\Escape\Color_LB.PNG" />
+    <Content Include="Pictures\Escape\Color_MG.PNG" />
+    <Content Include="Pictures\Escape\Color_OW.PNG" />
+    <Content Include="Pictures\Escape\Color_SB.PNG" />
+    <Content Include="Pictures\Escape\Color_WG.PNG" />
+    <Content Include="Pictures\Escape\Escape1.jpg" />
+    <Content Include="Pictures\Escape\Escape2.jpg" />
+    <Content Include="Pictures\Escape\Escape3.jpg" />
+    <Content Include="Pictures\Escape\Escape4.jpg" />
+    <Content Include="Pictures\Escape\Escape_CR.png" />
+    <Content Include="Pictures\Escape\Escape_IS.png" />
+    <Content Include="Pictures\Escape\Escape_LB.png" />
+    <Content Include="Pictures\Escape\Escape_MG.png" />
+    <Content Include="Pictures\Escape\Escape_OW.png" />
+    <Content Include="Pictures\Escape\Escape_SB.png" />
+    <Content Include="Pictures\Escape\Escape_WG.png" />
+    <Content Include="Pictures\Expedition\Color_BF.PNG" />
+    <Content Include="Pictures\Expedition\Color_BJ.PNG" />
+    <Content Include="Pictures\Expedition\Color_IS.PNG" />
+    <Content Include="Pictures\Expedition\Color_MG.PNG" />
+    <Content Include="Pictures\Expedition\Color_OW.PNG" />
+    <Content Include="Pictures\Expedition\Color_RR.PNG" />
+    <Content Include="Pictures\Expedition\Color_SB.PNG" />
+    <Content Include="Pictures\Expedition\Color_WG.PNG" />
+    <Content Include="Pictures\Expedition\Color_WP.PNG" />
+    <Content Include="Pictures\Expedition\Expedition1.jpg" />
+    <Content Include="Pictures\Expedition\Expedition2.jpg" />
+    <Content Include="Pictures\Expedition\Expedition3.jpg" />
+    <Content Include="Pictures\Expedition\Expedition_BF.png" />
+    <Content Include="Pictures\Expedition\Expedition_BJ.png" />
+    <Content Include="Pictures\Expedition\Expedition_IS.png" />
+    <Content Include="Pictures\Expedition\Expedition_MG.png" />
+    <Content Include="Pictures\Expedition\Expedition_OW.png" />
+    <Content Include="Pictures\Expedition\Expedition_RR.png" />
+    <Content Include="Pictures\Expedition\Expedition_SB.png" />
+    <Content Include="Pictures\Expedition\Expedition_WG.png" />
+    <Content Include="Pictures\Expedition\Expedition_WP.png" />
+    <Content Include="Pictures\Explorer\Color_BJ.PNG" />
+    <Content Include="Pictures\Explorer\Color_IS.PNG" />
+    <Content Include="Pictures\Explorer\Color_OW.PNG" />
+    <Content Include="Pictures\Explorer\Color_RR.PNG" />
+    <Content Include="Pictures\Explorer\Color_SB.PNG" />
+    <Content Include="Pictures\Explorer\Explorer1.jpg" />
+    <Content Include="Pictures\Explorer\Explorer2.jpg" />
+    <Content Include="Pictures\Explorer\Explorer3.jpg" />
+    <Content Include="Pictures\Explorer\Explorer4.png" />
+    <Content Include="Pictures\Explorer\Explorer5.jpg" />
+    <Content Include="Pictures\Explorer\Explorer_BJ.png" />
+    <Content Include="Pictures\Explorer\Explorer_IS.png" />
+    <Content Include="Pictures\Explorer\Explorer_OW.png" />
+    <Content Include="Pictures\Explorer\Explorer_RR.png" />
+    <Content Include="Pictures\Explorer\Explorer_SB.png" />
+    <Content Include="Pictures\F150\Color_BJ.PNG" />
+    <Content Include="Pictures\F150\Color_CA.PNG" />
+    <Content Include="Pictures\F150\Color_IS.PNG" />
+    <Content Include="Pictures\F150\Color_LB.PNG" />
+    <Content Include="Pictures\F150\Color_LG.PNG" />
+    <Content Include="Pictures\F150\Color_MG.PNG" />
+    <Content Include="Pictures\F150\Color_OW.PNG" />
+    <Content Include="Pictures\F150\Color_RR.PNG" />
+    <Content Include="Pictures\F150\Color_SB.PNG" />
+    <Content Include="Pictures\F150\F1501.jpg" />
+    <Content Include="Pictures\F150\F1502.jpg" />
+    <Content Include="Pictures\F150\F1503.jpg" />
+    <Content Include="Pictures\F150\F1504.jpg" />
+    <Content Include="Pictures\F150\F1505.jpg" />
+    <Content Include="Pictures\F150\F1506.jpg" />
+    <Content Include="Pictures\F150\F150_BJ.png" />
+    <Content Include="Pictures\F150\F150_CA.png" />
+    <Content Include="Pictures\F150\F150_IS.png" />
+    <Content Include="Pictures\F150\F150_LB.png" />
+    <Content Include="Pictures\F150\F150_LG.png" />
+    <Content Include="Pictures\F150\F150_MG.png" />
+    <Content Include="Pictures\F150\F150_OW.png" />
+    <Content Include="Pictures\F150\F150_RR.png" />
+    <Content Include="Pictures\F150\F150_SB.png" />
+    <Content Include="Pictures\Fiesta\Color_IS.PNG" />
+    <Content Include="Pictures\Fiesta\Color_OW.PNG" />
+    <Content Include="Pictures\Fiesta\Color_SB.PNG" />
+    <Content Include="Pictures\Fiesta\Fiesta1.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta2.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta3.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta4.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta5.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta6.jpg" />
+    <Content Include="Pictures\Fiesta\Fiesta_IS.png" />
+    <Content Include="Pictures\Fiesta\Fiesta_OW.png" />
+    <Content Include="Pictures\Fiesta\Fiesta_SB.png" />
+    <Content Include="Pictures\Flex\Color_GB.PNG" />
+    <Content Include="Pictures\Flex\Color_IS.PNG" />
+    <Content Include="Pictures\Flex\Color_MG.PNG" />
+    <Content Include="Pictures\Flex\Color_OW.PNG" />
+    <Content Include="Pictures\Flex\Color_SB.PNG" />
+    <Content Include="Pictures\Flex\Flex1.jpg" />
+    <Content Include="Pictures\Flex\Flex2.jpg" />
+    <Content Include="Pictures\Flex\Flex3.jpg" />
+    <Content Include="Pictures\Flex\Flex4.jpg" />
+    <Content Include="Pictures\Flex\Flex_GB.png" />
+    <Content Include="Pictures\Flex\Flex_IS.png" />
+    <Content Include="Pictures\Flex\Flex_MG.png" />
+    <Content Include="Pictures\Flex\Flex_OW.png" />
+    <Content Include="Pictures\Flex\Flex_SB.png" />
+    <Content Include="Pictures\Focus\Color_BC.PNG" />
+    <Content Include="Pictures\Focus\Color_IS.PNG" />
+    <Content Include="Pictures\Focus\Color_KB.PNG" />
+    <Content Include="Pictures\Focus\Color_MG.PNG" />
+    <Content Include="Pictures\Focus\Color_OW.PNG" />
+    <Content Include="Pictures\Focus\Color_RR.PNG" />
+    <Content Include="Pictures\Focus\Color_RRed.PNG" />
+    <Content Include="Pictures\Focus\Color_SB.PNG" />
+    <Content Include="Pictures\Focus\Color_TE.PNG" />
+    <Content Include="Pictures\Focus\Focus1.jpg" />
+    <Content Include="Pictures\Focus\Focus2.jpg" />
+    <Content Include="Pictures\Focus\Focus3.jpg" />
+    <Content Include="Pictures\Focus\Focus4.jpg" />
+    <Content Include="Pictures\Focus\Focus5.jpg" />
+    <Content Include="Pictures\Focus\Focus_BC.png" />
+    <Content Include="Pictures\Focus\Focus_IS.png" />
+    <Content Include="Pictures\Focus\Focus_KB.png" />
+    <Content Include="Pictures\Focus\Focus_MG.png" />
+    <Content Include="Pictures\Focus\Focus_OW.png" />
+    <Content Include="Pictures\Focus\Focus_RR.png" />
+    <Content Include="Pictures\Focus\Focus_RRed.png" />
+    <Content Include="Pictures\Focus\Focus_SB.png" />
+    <Content Include="Pictures\Focus\Focus_TE.png" />
+    <Content Include="Pictures\ford1.png" />
+    <Content Include="Pictures\ford2.jpg" />
+    <Content Include="Pictures\ford3.jpg" />
+    <Content Include="Pictures\ford4.jpg" />
+    <Content Include="Pictures\ford5.jpg" />
+    <Content Include="Pictures\ford_logo.png" />
+    <Content Include="Pictures\Fusion\Color_BV.PNG" />
+    <Content Include="Pictures\Fusion\Color_IS.PNG" />
+    <Content Include="Pictures\Fusion\Color_LB.PNG" />
+    <Content Include="Pictures\Fusion\Color_MG.PNG" />
+    <Content Include="Pictures\Fusion\Color_OW.PNG" />
+    <Content Include="Pictures\Fusion\Color_RR.PNG" />
+    <Content Include="Pictures\Fusion\Color_SB.PNG" />
+    <Content Include="Pictures\Fusion\Color_WG.PNG" />
+    <Content Include="Pictures\Fusion\Fusion1.jpg" />
+    <Content Include="Pictures\Fusion\Fusion2.jpg" />
+    <Content Include="Pictures\Fusion\Fusion3.jpg" />
+    <Content Include="Pictures\Fusion\Fusion4.jpg" />
+    <Content Include="Pictures\Fusion\Fusion5.jpg" />
+    <Content Include="Pictures\Fusion\Fusion6.jpg" />
+    <Content Include="Pictures\Fusion\Fusion_BV.png" />
+    <Content Include="Pictures\Fusion\Fusion_IS.png" />
+    <Content Include="Pictures\Fusion\Fusion_LB.png" />
+    <Content Include="Pictures\Fusion\Fusion_MG.png" />
+    <Content Include="Pictures\Fusion\Fusion_OW.png" />
+    <Content Include="Pictures\Fusion\Fusion_RR.png" />
+    <Content Include="Pictures\Fusion\Fusion_SB.png" />
+    <Content Include="Pictures\Fusion\Fusion_WG.png" />
+    <Content Include="Pictures\Mustang\Color_GB.PNG" />
+    <Content Include="Pictures\Mustang\Color_IS.PNG" />
+    <Content Include="Pictures\Mustang\Color_LB.PNG" />
+    <Content Include="Pictures\Mustang\Color_MG.PNG" />
+    <Content Include="Pictures\Mustang\Color_OW.PNG" />
+    <Content Include="Pictures\Mustang\Color_RR.PNG" />
+    <Content Include="Pictures\Mustang\Color_RRed.PNG" />
+    <Content Include="Pictures\Mustang\Color_SB.PNG" />
+    <Content Include="Pictures\Mustang\Color_TY.PNG" />
+    <Content Include="Pictures\Mustang\Color_WP.PNG" />
+    <Content Include="Pictures\Mustang\Mustang1.jpg" />
+    <Content Include="Pictures\Mustang\Mustang2.jpg" />
+    <Content Include="Pictures\Mustang\Mustang3.jpg" />
+    <Content Include="Pictures\Mustang\Mustang4.jpg" />
+    <Content Include="Pictures\Mustang\Mustang_GB.png" />
+    <Content Include="Pictures\Mustang\Mustang_IS.png" />
+    <Content Include="Pictures\Mustang\Mustang_LB.png" />
+    <Content Include="Pictures\Mustang\Mustang_MG.png" />
+    <Content Include="Pictures\Mustang\Mustang_OW.png" />
+    <Content Include="Pictures\Mustang\Mustang_RR.png" />
+    <Content Include="Pictures\Mustang\Mustang_RRed.png" />
+    <Content Include="Pictures\Mustang\Mustang_SB.png" />
+    <Content Include="Pictures\Mustang\Mustang_TY.png" />
+    <Content Include="Pictures\Mustang\Mustang_WP.png" />
+    <Content Include="Pictures\SuperDuty\Color_BJ.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_CA.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_IS.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_MG.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_OW.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_RR.PNG" />
+    <Content Include="Pictures\SuperDuty\Color_SB.PNG" />
+    <Content Include="Pictures\SuperDuty\SuperDuty1.jpg" />
+    <Content Include="Pictures\SuperDuty\SuperDuty2.jpg" />
+    <Content Include="Pictures\SuperDuty\SuperDuty3.jpg" />
+    <Content Include="Pictures\SuperDuty\SuperDuty4.jpg" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_BJ.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_CA.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_IS.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_MG.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_OW.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_RR.png" />
+    <Content Include="Pictures\SuperDuty\SuperDuty_SB.png" />
+    <Content Include="Pictures\SUVs\edge_dropdown.png" />
+    <Content Include="Pictures\SUVs\escape_dropdown.png" />
+    <Content Include="Pictures\SUVs\expedition_dropdown.jpg" />
+    <Content Include="Pictures\SUVs\explorer_dropdown.png" />
+    <Content Include="Pictures\SUVs\flex_dropdown.jpg" />
+    <Content Include="Pictures\SUVs\transitconnect_dropdown.png" />
+    <Content Include="Pictures\Taurus\Color_BJ.PNG" />
+    <Content Include="Pictures\Taurus\Color_CA.PNG" />
+    <Content Include="Pictures\Taurus\Color_GD.PNG" />
+    <Content Include="Pictures\Taurus\Color_IS.PNG" />
+    <Content Include="Pictures\Taurus\Color_MG.PNG" />
+    <Content Include="Pictures\Taurus\Color_OW.PNG" />
+    <Content Include="Pictures\Taurus\Color_SB.PNG" />
+    <Content Include="Pictures\Taurus\Taurus1.jpg" />
+    <Content Include="Pictures\Taurus\Taurus2.jpg" />
+    <Content Include="Pictures\Taurus\Taurus3.jpg" />
+    <Content Include="Pictures\Taurus\Taurus4.jpg" />
+    <Content Include="Pictures\Taurus\Taurus_BJ.png" />
+    <Content Include="Pictures\Taurus\Taurus_CA.png" />
+    <Content Include="Pictures\Taurus\Taurus_GD.png" />
+    <Content Include="Pictures\Taurus\Taurus_IS.png" />
+    <Content Include="Pictures\Taurus\Taurus_MG.png" />
+    <Content Include="Pictures\Taurus\Taurus_OW.png" />
+    <Content Include="Pictures\Taurus\Taurus_SB.png" />
+    <Content Include="Pictures\Transit\Color_CA.PNG" />
+    <Content Include="Pictures\Transit\Color_DB.PNG" />
+    <Content Include="Pictures\Transit\Color_FW.PNG" />
+    <Content Include="Pictures\Transit\Color_RR.PNG" />
+    <Content Include="Pictures\Transit\Color_SB.PNG" />
+    <Content Include="Pictures\Transit\Color_SI.PNG" />
+    <Content Include="Pictures\Transit\TransConn1.jpg" />
+    <Content Include="Pictures\Transit\TransConn2.jpg" />
+    <Content Include="Pictures\Transit\TransConn3.jpg" />
+    <Content Include="Pictures\Transit\TransConn_DB.png" />
+    <Content Include="Pictures\Transit\TransConn_FW.png" />
+    <Content Include="Pictures\Transit\TransConn_RR.png" />
+    <Content Include="Pictures\Transit\TransConn_SB.png" />
+    <Content Include="Pictures\Transit\TransConn_SI.png" />
+    <Content Include="Pictures\TrucksVans\f150_dropdown.jpg" />
+    <Content Include="Pictures\TrucksVans\superduty_dropdown.png" />
+    <Content Include="Pictures\TrucksVans\transit_dropdown.png" />
+    <Content Include="scripts\ai.0.22.19-build00125.js" />
+    <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="ShoppingTools.aspx" />
+    <Content Include="Styles\Styles.css" />
+    <Content Include="SuperDuty.aspx" />
+    <Content Include="Taurus.aspx" />
+    <Content Include="Transit.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Edge.aspx.cs">
+      <DependentUpon>Edge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Edge.aspx.designer.cs">
+      <DependentUpon>Edge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Escape.aspx.cs">
+      <DependentUpon>Escape.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Escape.aspx.designer.cs">
+      <DependentUpon>Escape.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expedition.aspx.cs">
+      <DependentUpon>Expedition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expedition.aspx.designer.cs">
+      <DependentUpon>Expedition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Explorer.aspx.cs">
+      <DependentUpon>Explorer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Explorer.aspx.designer.cs">
+      <DependentUpon>Explorer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="F150.aspx.cs">
+      <DependentUpon>F150.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="F150.aspx.designer.cs">
+      <DependentUpon>F150.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Flex.aspx.cs">
+      <DependentUpon>Flex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Flex.aspx.designer.cs">
+      <DependentUpon>Flex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Owner.aspx.cs">
+      <DependentUpon>Owner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Owner.aspx.designer.cs">
+      <DependentUpon>Owner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mustang.aspx.cs">
+      <DependentUpon>Mustang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mustang.aspx.designer.cs">
+      <DependentUpon>Mustang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fusion.aspx.cs">
+      <DependentUpon>Fusion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fusion.aspx.designer.cs">
+      <DependentUpon>Fusion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fiesta.aspx.cs">
+      <DependentUpon>Fiesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fiesta.aspx.designer.cs">
+      <DependentUpon>Fiesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Focus.aspx.cs">
+      <DependentUpon>Focus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Focus.aspx.designer.cs">
+      <DependentUpon>Focus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMax.aspx.cs">
+      <DependentUpon>CMax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMax.aspx.designer.cs">
+      <DependentUpon>CMax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingTools.aspx.cs">
+      <DependentUpon>ShoppingTools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingTools.aspx.designer.cs">
+      <DependentUpon>ShoppingTools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperDuty.aspx.cs">
+      <DependentUpon>SuperDuty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperDuty.aspx.designer.cs">
+      <DependentUpon>SuperDuty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taurus.aspx.cs">
+      <DependentUpon>Taurus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taurus.aspx.designer.cs">
+      <DependentUpon>Taurus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transit.aspx.cs">
+      <DependentUpon>Transit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transit.aspx.designer.cs">
+      <DependentUpon>Transit.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49978</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49978/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

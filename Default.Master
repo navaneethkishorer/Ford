@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Ford.Default1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Ford</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <%-- Scripts Required --%>
+    <script src="bootstrap-3.3.7-dist/js/jquery-2.2.3.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href="Styles/Styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="formHomepage" runat="server">
+        <div>
+            <div id="HeaderID" class="navbar-default navbar-static-top" role="navigation">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="navbrand" class="navbar-brand" href="Default.aspx">
+                        <img alt="Ford" src="Pictures/ford_logo.png" style="margin: 0; float: none; height: 50px; width: 70px;" /></a>
+                </div>
+                <div class="container">
+                    <div class="navbar-collapse collapse">
+                        <ul id="elementsID" class="nav navbar-nav navbar-right" style="font-weight: bold;">
+                            <li class="active"><a href="Default.aspx">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cars&nbsp;<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="Fiesta.aspx">Fiesta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Pictures/Cars/fiesta_dropdown.jpg" alt="Fiesta" style="height: 50%; width: 50%;" />
+                                    </a></li>
+                                    <li><a href="Fusion.aspx">Fusion&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/Cars/fusion_dropdown.jpg" alt="Fusion" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Focus.aspx">Focus&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/Cars/focus_dropdown.png" alt="Focus" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="CMax.aspx">C-Max&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/Cars/cmax_dropdown.png" alt="C-Max" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Mustang.aspx">Mustang&nbsp;
+                                    <img src="Pictures/Cars/mustang_dropdown.png" alt="Mustang" style="height: 60%; width: 60%;" /></a></li>
+                                    <li><a href="Taurus.aspx">Taurus&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/Cars/taurus_dropdown.png" alt="Taurus" style="height: 50%; width: 50%;" /></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">SUVs&nbsp;<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="Escape.aspx">Escape&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Pictures/SUVs/escape_dropdown.png" alt="escape" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Transit.aspx">Transit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Pictures/SUVs/transitconnect_dropdown.png" alt="Transit Con" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Edge.aspx">Edge &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/SUVs/edge_dropdown.png" alt="edge" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Flex.aspx">Flex &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Pictures/SUVs/flex_dropdown.jpg" alt="flex" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Explorer.aspx">Explorer &nbsp;
+                                    <img src="Pictures/SUVs/explorer_dropdown.png" alt="explorer" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="Expedition.aspx">Expedition
+                                    <img src="Pictures/SUVs/expedition_dropdown.jpg" alt="expedition" style="height: 50%; width: 50%;" /></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trucks & Vans&nbsp;<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="F150.aspx">F-150 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src="Pictures/TrucksVans/f150_dropdown.jpg" alt="F150" style="height: 50%; width: 50%;" /></a></li>
+                                    <li><a href="SuperDuty.aspx">Super Duty
+                                    <img src="Pictures/TrucksVans/superduty_dropdown.png" alt="Super Duty" style="height: 50%; width: 50%;" /></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Shopping Tools</a></li>
+                            <li><a href="Owner.aspx">Owner</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Find a Dealer&nbsp;<b class="caret"></b></a>
+                                <ul class="dropdown-menu" id="ZIPID">
+                                    <li>
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Enter Your ZIP" />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-success" type="button" onclick="">Go!</button>
+                                            </span>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
